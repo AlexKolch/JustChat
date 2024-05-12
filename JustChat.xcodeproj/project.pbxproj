@@ -9,25 +9,31 @@
 /* Begin PBXBuildFile section */
 		FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F61E2BED00E500918D70 /* AppDelegate.swift */; };
 		FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6202BED00E500918D70 /* SceneDelegate.swift */; };
-		FC54F6232BED00E500918D70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6222BED00E500918D70 /* ViewController.swift */; };
+		FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6222BED00E500918D70 /* LoginViewController.swift */; };
 		FC54F6262BED00E500918D70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC54F6242BED00E500918D70 /* Main.storyboard */; };
 		FC54F6282BED00E600918D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC54F6272BED00E600918D70 /* Assets.xcassets */; };
 		FC54F62B2BED00E600918D70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC54F6292BED00E600918D70 /* LaunchScreen.storyboard */; };
 		FC54F6462BF103A500918D70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC54F6452BF103A500918D70 /* GoogleService-Info.plist */; };
 		FC54F6492BF10B4500918D70 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = FC54F6482BF10B4500918D70 /* FirebaseAnalyticsOnDeviceConversion */; };
 		FC54F64B2BF10B4500918D70 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC54F64A2BF10B4500918D70 /* FirebaseAuth */; };
+		FC54F64E2BF1189900918D70 /* SlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */; };
+		FC54F64F2BF1189900918D70 /* SlideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */; };
+		FC54F6512BF127DC00918D70 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6502BF127DC00918D70 /* Slide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FC54F61B2BED00E500918D70 /* JustChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC54F61E2BED00E500918D70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC54F6202BED00E500918D70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC54F6222BED00E500918D70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC54F6222BED00E500918D70 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FC54F6252BED00E500918D70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC54F6272BED00E600918D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC54F62A2BED00E600918D70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC54F62C2BED00E600918D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC54F6452BF103A500918D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCollectionViewCell.swift; sourceTree = "<group>"; };
+		FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCollectionViewCell.xib; sourceTree = "<group>"; };
+		FC54F6502BF127DC00918D70 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +70,10 @@
 			children = (
 				FC54F61E2BED00E500918D70 /* AppDelegate.swift */,
 				FC54F6202BED00E500918D70 /* SceneDelegate.swift */,
-				FC54F6222BED00E500918D70 /* ViewController.swift */,
+				FC54F6222BED00E500918D70 /* LoginViewController.swift */,
+				FC54F6522BF1280100918D70 /* Model */,
+				FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */,
+				FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */,
 				FC54F6242BED00E500918D70 /* Main.storyboard */,
 				FC54F6272BED00E600918D70 /* Assets.xcassets */,
 				FC54F6292BED00E600918D70 /* LaunchScreen.storyboard */,
@@ -72,6 +81,14 @@
 				FC54F62C2BED00E600918D70 /* Info.plist */,
 			);
 			path = JustChat;
+			sourceTree = "<group>";
+		};
+		FC54F6522BF1280100918D70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC54F6502BF127DC00918D70 /* Slide.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC54F62B2BED00E600918D70 /* LaunchScreen.storyboard in Resources */,
+				FC54F64F2BF1189900918D70 /* SlideCollectionViewCell.xib in Resources */,
 				FC54F6462BF103A500918D70 /* GoogleService-Info.plist in Resources */,
 				FC54F6282BED00E600918D70 /* Assets.xcassets in Resources */,
 				FC54F6262BED00E500918D70 /* Main.storyboard in Resources */,
@@ -153,9 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC54F6232BED00E500918D70 /* ViewController.swift in Sources */,
+				FC54F64E2BF1189900918D70 /* SlideCollectionViewCell.swift in Sources */,
+				FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */,
 				FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */,
 				FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */,
+				FC54F6512BF127DC00918D70 /* Slide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

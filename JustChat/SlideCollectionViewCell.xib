@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SlideCollectionViewCell" customModule="JustChat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="499"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="321" height="499"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="Qdz-s2-OvO">
+                        <rect key="frame" x="0.0" y="0.0" width="321" height="499"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JustChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5e-ZV-J1g">
+                        <rect key="frame" x="35" y="65" width="122" height="33"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAo-Ac-bJ3">
+                        <rect key="frame" x="20" y="114" width="293" height="203"/>
+                        <mutableString key="text">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</mutableString>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvm-RW-0vF">
+                        <rect key="frame" x="118.66666666666669" y="357" width="84" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="rno-nx-ReW"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="SignInTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="EDO-4t-t7a"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE4-xc-Sie">
+                        <rect key="frame" x="118.66666666666669" y="409" width="84" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="84" id="CsZ-ML-hOf"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="SignUpTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Xqq-5C-nsI"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="cvm-RW-0vF" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="6fc-1u-5lf"/>
+                <constraint firstAttribute="trailing" secondItem="Qdz-s2-OvO" secondAttribute="trailing" id="9A2-FP-d8K"/>
+                <constraint firstItem="n5e-ZV-J1g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="35" id="AFy-0E-fR2"/>
+                <constraint firstAttribute="bottom" secondItem="hE4-xc-Sie" secondAttribute="bottom" constant="55" id="MPn-OH-r1G"/>
+                <constraint firstAttribute="bottom" secondItem="Qdz-s2-OvO" secondAttribute="bottom" id="Sqd-na-sVu"/>
+                <constraint firstItem="bAo-Ac-bJ3" firstAttribute="top" secondItem="n5e-ZV-J1g" secondAttribute="bottom" constant="16" id="TXt-zP-3fm"/>
+                <constraint firstItem="n5e-ZV-J1g" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="65" id="UtH-OE-PYG"/>
+                <constraint firstItem="bAo-Ac-bJ3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="XPi-93-E5s"/>
+                <constraint firstItem="hE4-xc-Sie" firstAttribute="top" secondItem="cvm-RW-0vF" secondAttribute="bottom" constant="17" id="fJl-A4-i2i"/>
+                <constraint firstAttribute="trailing" secondItem="bAo-Ac-bJ3" secondAttribute="trailing" constant="8" id="g7y-X4-PkD"/>
+                <constraint firstItem="hE4-xc-Sie" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="l8P-Mw-fdN"/>
+                <constraint firstItem="Qdz-s2-OvO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tyk-bD-OXI"/>
+                <constraint firstItem="Qdz-s2-OvO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yzp-0f-ACw"/>
+            </constraints>
+            <size key="customSize" width="321" height="499"/>
+            <connections>
+                <outlet property="SignInButton" destination="cvm-RW-0vF" id="4Nl-Pd-DCl"/>
+                <outlet property="SignUpButton" destination="hE4-xc-Sie" id="V4S-Jg-zZE"/>
+                <outlet property="descrText" destination="bAo-Ac-bJ3" id="b8z-mo-5tB"/>
+                <outlet property="image" destination="Qdz-s2-OvO" id="PlM-Yd-aRT"/>
+                <outlet property="titleApp" destination="n5e-ZV-J1g" id="SgV-SQ-h0i"/>
+            </connections>
+            <point key="canvasLocation" x="67.938931297709928" y="21.47887323943662"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img1" width="2240" height="2800"/>
+    </resources>
+</document>
