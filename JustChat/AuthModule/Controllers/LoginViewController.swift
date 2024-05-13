@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func openSignUpVC()
+    func openSignInVC()
+}
+
 class LoginViewController: UIViewController {
     
     private lazy var sliderCollectionV: UICollectionView = setCollectionView()
     
-    private var slides = [Slide(image: "img1", text: "efdsvsdvsdvsdv"), Slide(image: "img2", text: "ddvv"), Slide(image: "img3", text: "efdsvsdvsdvsdv")]
+    private var slides = [Slide(image: "img1", text: "efdsvsdvsdvsdv"),
+                          Slide(image: "img2", text: "ddvv"),
+                          Slide(image: "img3", text: "efdsvsdvsdvsdv")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +59,10 @@ extension LoginViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SlideCollectionViewCell.reuseId, for: indexPath) as? SlideCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.delegate = self
         cell.configure(slide: slides[indexPath.item])
+        
         if indexPath.item == 2 {
             cell.SignInButton.isHidden = false
             cell.SignUpButton.isHidden = false
@@ -60,6 +70,30 @@ extension LoginViewController: UICollectionViewDataSource {
             cell.descrText.textColor = .black
         }
         return cell
+    }
+    
+}
+
+extension LoginViewController: LoginViewControllerDelegate {
+    
+    func openSignInVC() {
+//        if let vc = storyboard?.instantiateViewController(withIdentifier: "SignInVC") {
+//            self.navigationController?.pushViewController(vc, animated: true)
+//            print("true")
+//        }
+//        let signInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignInVC")
+      performSegue(withIdentifier: "goToSignInVC", sender: self)
+
+//        self.navigationController?.pushViewController(signInVC, animated: true)
+   
+ 
+    }
+    
+    func openSignUpVC() {
+        performSegue(withIdentifier: "goToSignUpVC", sender: self)
+//        let signUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignUpVC")
+//        navigationController?.pushViewController(signUpVC, animated: true)
+      
     }
     
 }

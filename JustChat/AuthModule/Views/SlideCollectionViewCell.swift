@@ -17,6 +17,8 @@ class SlideCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var SignInButton: UIButton!
     @IBOutlet weak var SignUpButton: UIButton!
     
+    weak var delegate: LoginViewControllerDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,10 +30,10 @@ class SlideCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func SignInTapped(_ sender: UIButton) {
-        
+        delegate?.openSignInVC()
     }
     
     @IBAction func SignUpTapped(_ sender: UIButton) {
-        
+        delegate?.openSignUpVC()
     }
 }

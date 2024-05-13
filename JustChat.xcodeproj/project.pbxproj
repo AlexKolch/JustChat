@@ -19,6 +19,9 @@
 		FC54F64E2BF1189900918D70 /* SlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */; };
 		FC54F64F2BF1189900918D70 /* SlideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */; };
 		FC54F6512BF127DC00918D70 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6502BF127DC00918D70 /* Slide.swift */; };
+		FC54F6582BF222F900918D70 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6572BF222F900918D70 /* SignInVC.swift */; };
+		FC54F65A2BF2230B00918D70 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6592BF2230B00918D70 /* SignUpVC.swift */; };
+		FC54F65D2BF2244500918D70 /* AppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F65C2BF2244500918D70 /* AppVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCollectionViewCell.swift; sourceTree = "<group>"; };
 		FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCollectionViewCell.xib; sourceTree = "<group>"; };
 		FC54F6502BF127DC00918D70 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		FC54F6572BF222F900918D70 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		FC54F6592BF2230B00918D70 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		FC54F65C2BF2244500918D70 /* AppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +74,9 @@
 		FC54F61D2BED00E500918D70 /* JustChat */ = {
 			isa = PBXGroup;
 			children = (
-				FC54F61E2BED00E500918D70 /* AppDelegate.swift */,
-				FC54F6202BED00E500918D70 /* SceneDelegate.swift */,
-				FC54F6222BED00E500918D70 /* LoginViewController.swift */,
-				FC54F6522BF1280100918D70 /* Model */,
-				FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */,
-				FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */,
+				FC54F6542BF2228700918D70 /* App */,
+				FC54F6532BF2226A00918D70 /* AuthModule */,
+				FC54F65B2BF2242A00918D70 /* AppModule */,
 				FC54F6242BED00E500918D70 /* Main.storyboard */,
 				FC54F6272BED00E600918D70 /* Assets.xcassets */,
 				FC54F6292BED00E600918D70 /* LaunchScreen.storyboard */,
@@ -89,6 +92,52 @@
 				FC54F6502BF127DC00918D70 /* Slide.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FC54F6532BF2226A00918D70 /* AuthModule */ = {
+			isa = PBXGroup;
+			children = (
+				FC54F6562BF222B300918D70 /* Views */,
+				FC54F6522BF1280100918D70 /* Model */,
+				FC54F6552BF2229400918D70 /* Controllers */,
+			);
+			path = AuthModule;
+			sourceTree = "<group>";
+		};
+		FC54F6542BF2228700918D70 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FC54F61E2BED00E500918D70 /* AppDelegate.swift */,
+				FC54F6202BED00E500918D70 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FC54F6552BF2229400918D70 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC54F6222BED00E500918D70 /* LoginViewController.swift */,
+				FC54F6572BF222F900918D70 /* SignInVC.swift */,
+				FC54F6592BF2230B00918D70 /* SignUpVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FC54F6562BF222B300918D70 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */,
+				FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC54F65B2BF2242A00918D70 /* AppModule */ = {
+			isa = PBXGroup;
+			children = (
+				FC54F65C2BF2244500918D70 /* AppVC.swift */,
+			);
+			path = AppModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC54F65D2BF2244500918D70 /* AppVC.swift in Sources */,
+				FC54F65A2BF2230B00918D70 /* SignUpVC.swift in Sources */,
 				FC54F64E2BF1189900918D70 /* SlideCollectionViewCell.swift in Sources */,
 				FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */,
+				FC54F6582BF222F900918D70 /* SignInVC.swift in Sources */,
 				FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */,
 				FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */,
 				FC54F6512BF127DC00918D70 /* Slide.swift in Sources */,
