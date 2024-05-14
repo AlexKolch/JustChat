@@ -11,3 +11,10 @@ struct Slide {
     let image: String
     let text: String
 }
+
+//struct LoginField {
+//    let email: String
+//    let password: String
+//}
+
+

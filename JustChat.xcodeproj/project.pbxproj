@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC3E712E2BF38359009E33D5 /* CheckField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E712D2BF38359009E33D5 /* CheckField.swift */; };
+		FC3E71312BF38B89009E33D5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E71302BF38B89009E33D5 /* AuthService.swift */; };
 		FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F61E2BED00E500918D70 /* AppDelegate.swift */; };
 		FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6202BED00E500918D70 /* SceneDelegate.swift */; };
 		FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6222BED00E500918D70 /* LoginViewController.swift */; };
@@ -19,7 +20,7 @@
 		FC54F64B2BF10B4500918D70 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC54F64A2BF10B4500918D70 /* FirebaseAuth */; };
 		FC54F64E2BF1189900918D70 /* SlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */; };
 		FC54F64F2BF1189900918D70 /* SlideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */; };
-		FC54F6512BF127DC00918D70 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6502BF127DC00918D70 /* Slide.swift */; };
+		FC54F6512BF127DC00918D70 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6502BF127DC00918D70 /* Model.swift */; };
 		FC54F6582BF222F900918D70 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6572BF222F900918D70 /* SignInVC.swift */; };
 		FC54F65A2BF2230B00918D70 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6592BF2230B00918D70 /* SignUpVC.swift */; };
 		FC54F65D2BF2244500918D70 /* AppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F65C2BF2244500918D70 /* AppVC.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		FC3E712D2BF38359009E33D5 /* CheckField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckField.swift; sourceTree = "<group>"; };
+		FC3E71302BF38B89009E33D5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		FC54F61B2BED00E500918D70 /* JustChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC54F61E2BED00E500918D70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC54F6202BED00E500918D70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		FC54F6452BF103A500918D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC54F64C2BF1189900918D70 /* SlideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCollectionViewCell.swift; sourceTree = "<group>"; };
 		FC54F64D2BF1189900918D70 /* SlideCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCollectionViewCell.xib; sourceTree = "<group>"; };
-		FC54F6502BF127DC00918D70 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		FC54F6502BF127DC00918D70 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FC54F6572BF222F900918D70 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		FC54F6592BF2230B00918D70 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		FC54F65C2BF2244500918D70 /* AppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVC.swift; sourceTree = "<group>"; };
@@ -57,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC3E712F2BF38B36009E33D5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FC3E712D2BF38359009E33D5 /* CheckField.swift */,
+				FC3E71302BF38B89009E33D5 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		FC54F6122BED00E500918D70 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +87,7 @@
 		FC54F61D2BED00E500918D70 /* JustChat */ = {
 			isa = PBXGroup;
 			children = (
+				FC3E712F2BF38B36009E33D5 /* Services */,
 				FC54F6542BF2228700918D70 /* App */,
 				FC54F6532BF2226A00918D70 /* AuthModule */,
 				FC54F65B2BF2242A00918D70 /* AppModule */,
@@ -91,8 +103,7 @@
 		FC54F6522BF1280100918D70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FC3E712D2BF38359009E33D5 /* CheckField.swift */,
-				FC54F6502BF127DC00918D70 /* Slide.swift */,
+				FC54F6502BF127DC00918D70 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,8 +241,9 @@
 				FC54F6582BF222F900918D70 /* SignInVC.swift in Sources */,
 				FC3E712E2BF38359009E33D5 /* CheckField.swift in Sources */,
 				FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */,
+				FC3E71312BF38B89009E33D5 /* AuthService.swift in Sources */,
 				FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */,
-				FC54F6512BF127DC00918D70 /* Slide.swift in Sources */,
+				FC54F6512BF127DC00918D70 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
