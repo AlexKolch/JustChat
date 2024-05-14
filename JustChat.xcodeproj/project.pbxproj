@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC3E712E2BF38359009E33D5 /* CheckField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E712D2BF38359009E33D5 /* CheckField.swift */; };
 		FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F61E2BED00E500918D70 /* AppDelegate.swift */; };
 		FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6202BED00E500918D70 /* SceneDelegate.swift */; };
 		FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6222BED00E500918D70 /* LoginViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC3E712D2BF38359009E33D5 /* CheckField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckField.swift; sourceTree = "<group>"; };
 		FC54F61B2BED00E500918D70 /* JustChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC54F61E2BED00E500918D70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC54F6202BED00E500918D70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		FC54F6522BF1280100918D70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FC3E712D2BF38359009E33D5 /* CheckField.swift */,
 				FC54F6502BF127DC00918D70 /* Slide.swift */,
 			);
 			path = Model;
@@ -225,6 +228,7 @@
 				FC54F64E2BF1189900918D70 /* SlideCollectionViewCell.swift in Sources */,
 				FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */,
 				FC54F6582BF222F900918D70 /* SignInVC.swift in Sources */,
+				FC3E712E2BF38359009E33D5 /* CheckField.swift in Sources */,
 				FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */,
 				FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */,
 				FC54F6512BF127DC00918D70 /* Slide.swift in Sources */,

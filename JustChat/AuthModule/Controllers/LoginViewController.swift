@@ -77,23 +77,11 @@ extension LoginViewController: UICollectionViewDataSource {
 extension LoginViewController: LoginViewControllerDelegate {
     
     func openSignInVC() {
-//        if let vc = storyboard?.instantiateViewController(withIdentifier: "SignInVC") {
-//            self.navigationController?.pushViewController(vc, animated: true)
-//            print("true")
-//        }
-//        let signInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignInVC")
       performSegue(withIdentifier: "goToSignInVC", sender: self)
-
-//        self.navigationController?.pushViewController(signInVC, animated: true)
-   
- 
     }
     
     func openSignUpVC() {
-        performSegue(withIdentifier: "goToSignUpVC", sender: self)
-//        let signUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignUpVC")
-//        navigationController?.pushViewController(signUpVC, animated: true)
-      
+        performSegue(withIdentifier: "goToSignUpVC", sender: self)      
     }
     
 }

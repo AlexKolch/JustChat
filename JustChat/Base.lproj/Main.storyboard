@@ -107,6 +107,9 @@
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="closeBtnTapped" destination="mPb-cP-Qm7" eventType="touchUpInside" id="3VG-QB-6U9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ub2-E7-3ix"/>
@@ -156,20 +159,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7cR-Xj-WT1">
                                         <rect key="frame" x="0.0" y="65.666666666666629" width="333" height="118"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0oL-RQ-jtT">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="email" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0oL-RQ-jtT">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="j3K-yA-40r">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="password" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="j3K-yA-40r">
                                                 <rect key="frame" x="0.0" y="42" width="333" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Repeat password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l5c-nt-kFv">
                                                 <rect key="frame" x="0.0" y="84" width="333" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -195,6 +198,9 @@
                                         <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpTapped" destination="kgl-h2-XLv" eventType="touchUpInside" id="UKt-vu-Q1o"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4p0-ZY-1Ff" userLabel="Button close">
                                 <rect key="frame" x="342.66666666666669" y="0.0" width="17.333333333333314" height="41"/>
@@ -202,6 +208,9 @@
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="closeBtnTapped" destination="kgl-h2-XLv" eventType="touchUpInside" id="gvc-pX-t7y"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ekW-qt-wL8"/>
@@ -221,6 +230,9 @@
                     <navigationItem key="navigationItem" id="Q2E-1h-YGC"/>
                     <connections>
                         <outlet property="EmailTF" destination="0oL-RQ-jtT" id="Uw7-pk-eCk"/>
+                        <outlet property="mainView" destination="7Fx-GT-sed" id="Eo4-84-j2r"/>
+                        <outlet property="passwordTF" destination="j3K-yA-40r" id="s0g-4S-feH"/>
+                        <outlet property="rePasswordTF" destination="l5c-nt-kFv" id="oni-D5-JDz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsB-US-mu7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
