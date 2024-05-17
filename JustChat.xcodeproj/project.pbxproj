@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FC3E712E2BF38359009E33D5 /* CheckField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E712D2BF38359009E33D5 /* CheckField.swift */; };
 		FC3E71312BF38B89009E33D5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E71302BF38B89009E33D5 /* AuthService.swift */; };
+		FC3E71332BF4E07E009E33D5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC3E71322BF4E07E009E33D5 /* FirebaseAuth */; };
+		FC3E71352BF4E07E009E33D5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC3E71342BF4E07E009E33D5 /* FirebaseFirestore */; };
 		FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F61E2BED00E500918D70 /* AppDelegate.swift */; };
 		FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6202BED00E500918D70 /* SceneDelegate.swift */; };
 		FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6222BED00E500918D70 /* LoginViewController.swift */; };
@@ -52,6 +54,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC54F6492BF10B4500918D70 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				FC3E71352BF4E07E009E33D5 /* FirebaseFirestore in Frameworks */,
+				FC3E71332BF4E07E009E33D5 /* FirebaseAuth in Frameworks */,
 				FC54F64B2BF10B4500918D70 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +177,8 @@
 			packageProductDependencies = (
 				FC54F6482BF10B4500918D70 /* FirebaseAnalyticsOnDeviceConversion */,
 				FC54F64A2BF10B4500918D70 /* FirebaseAuth */,
+				FC3E71322BF4E07E009E33D5 /* FirebaseAuth */,
+				FC3E71342BF4E07E009E33D5 /* FirebaseFirestore */,
 			);
 			productName = JustChat;
 			productReference = FC54F61B2BED00E500918D70 /* JustChat.app */;
@@ -487,6 +493,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FC3E71322BF4E07E009E33D5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC54F6472BF10B4500918D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FC3E71342BF4E07E009E33D5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC54F6472BF10B4500918D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		FC54F6482BF10B4500918D70 /* FirebaseAnalyticsOnDeviceConversion */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FC54F6472BF10B4500918D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

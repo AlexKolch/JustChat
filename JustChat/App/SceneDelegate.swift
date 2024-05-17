@@ -26,13 +26,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        userDefaults.set(true, forKey: "isAuth")
-        let isAuth = userDefaults.object(forKey: "isAuth") as? Bool ?? false
+//        userDefaults.set(false, forKey: "isAuth")
+        let isAuth = userDefaults.object(forKey: "isAuth") as? Bool ?? false //флаг авторизации юзера в приложении
         
         //Механизм проверки авторизации
         if isAuth {
-//            startApp()
             startLogin()
+//            startApp()
         } else {
             startLogin()
         }

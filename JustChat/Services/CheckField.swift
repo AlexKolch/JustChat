@@ -5,7 +5,7 @@ class CheckField {
     static let shared = CheckField(); private init() {}
     
     //isValid?
-    private func isValid(_ type: String, _ data: String) -> Bool{
+    private func isValid(_ type: String, _ data: String) -> Bool {
         var dataRegEx = ""
         switch type {
         case "e":
@@ -61,7 +61,7 @@ class CheckField {
     private func validView(_ parentView: UIView? = nil, _ field: UITextField, _ valid: Bool){
         if valid{
             field.backgroundColor = #colorLiteral(red: 0.9410838485, green: 0.9412415624, blue: 0.9410631061, alpha: 1)
-            parentView?.backgroundColor = #colorLiteral(red: 0.9410838485, green: 0.9412415624, blue: 0.9410631061, alpha: 1)
+            parentView?.backgroundColor = #colorLiteral(red: 0.9410838485, green: 0.9412415624, blue: 0.9410631061, alpha: 1) //если есть скругленная вью для текстФилда
         } else {
             field.backgroundColor = #colorLiteral(red: 1, green: 0.2566739321, blue: 0.3427716792, alpha: 1)
             parentView?.backgroundColor = #colorLiteral(red: 1, green: 0.2566739321, blue: 0.3427716792, alpha: 1)

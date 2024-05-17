@@ -55,21 +55,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uqy-ad-Sn4">
                                         <rect key="frame" x="0.0" y="65.666666666666686" width="333" height="118.33333333333331"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pyl-9S-Vy8">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="email" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pyl-9S-Vy8">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lJF-hn-Bc4">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="password" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lJF-hn-Bc4">
                                                 <rect key="frame" x="0.0" y="42" width="333" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QK-Cv-WeJ">
                                                 <rect key="frame" x="0.0" y="84" width="333" height="34.333333333333343"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot password"/>
+                                                <connections>
+                                                    <action selector="forgotPasswordTapped" destination="mPb-cP-Qm7" eventType="touchUpInside" id="ba8-4C-wRt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -78,6 +81,9 @@
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Do you haven't account?"/>
+                                        <connections>
+                                            <action selector="haventAccBtnTapped" destination="mPb-cP-Qm7" eventType="touchUpInside" id="l2R-g4-25t"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -100,6 +106,9 @@
                                         <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInBtnTapped" destination="mPb-cP-Qm7" eventType="touchUpInside" id="zce-wS-xsR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0X-24-g1m" userLabel="ButtonClose">
                                 <rect key="frame" x="342.66666666666669" y="0.0" width="17.333333333333314" height="41"/>
@@ -128,6 +137,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="y6Q-FP-fHv"/>
+                    <connections>
+                        <outlet property="emailTF" destination="pyl-9S-Vy8" id="qUl-4P-zS5"/>
+                        <outlet property="mainView" destination="Vpl-He-XrE" id="f0Q-87-bH5"/>
+                        <outlet property="passwordTF" destination="lJF-hn-Bc4" id="JEG-Fl-SKj"/>
+                        <segue destination="jDt-Ee-On2" kind="presentation" identifier="goToAppVC" modalPresentationStyle="fullScreen" id="Sto-sf-GF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3H4-IP-0f7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,6 +284,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="jDt-Ee-On2" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hnA-u2-2NN"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sh2-F3-cWS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
