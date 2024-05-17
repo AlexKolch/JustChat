@@ -59,3 +59,24 @@ class AuthService {
         }
     }
 }
+
+//MARK: - Request in Firebase
+extension AuthService {
+    
+    func getAllUsers(handler: @escaping ([String]) -> Void) {
+        Firestore.firestore().collection("users").getDocuments { snap, error in
+            if let err = error {
+                print("Не получилось получить данные: \(err.localizedDescription)")
+            }
+            guard let docs = snap?.documents else { return }
+            var emailList = [String]()
+            //Получаем данные из массива документов файрбейса
+            for doc in docs {
+                let data = doc.data()
+                let userEmail = data["email"] as! String //достаем по ключу
+                emailList.append(userEmail)
+            }
+            handler(emailList)
+        }
+    }
+}

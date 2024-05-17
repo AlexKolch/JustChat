@@ -11,6 +11,8 @@
 		FC3E71312BF38B89009E33D5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E71302BF38B89009E33D5 /* AuthService.swift */; };
 		FC3E71332BF4E07E009E33D5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC3E71322BF4E07E009E33D5 /* FirebaseAuth */; };
 		FC3E71352BF4E07E009E33D5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC3E71342BF4E07E009E33D5 /* FirebaseFirestore */; };
+		FC3E713A2BF7679F009E33D5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E71382BF7679F009E33D5 /* UserTableViewCell.swift */; };
+		FC3E713B2BF7679F009E33D5 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3E71392BF7679F009E33D5 /* UserTableViewCell.xib */; };
 		FC54F61F2BED00E500918D70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F61E2BED00E500918D70 /* AppDelegate.swift */; };
 		FC54F6212BED00E500918D70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6202BED00E500918D70 /* SceneDelegate.swift */; };
 		FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6222BED00E500918D70 /* LoginViewController.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		FC3E712D2BF38359009E33D5 /* CheckField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckField.swift; sourceTree = "<group>"; };
 		FC3E71302BF38B89009E33D5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FC3E71382BF7679F009E33D5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		FC3E71392BF7679F009E33D5 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		FC54F61B2BED00E500918D70 /* JustChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC54F61E2BED00E500918D70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC54F6202BED00E500918D70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,23 @@
 				FC3E71302BF38B89009E33D5 /* AuthService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FC3E71362BF7674E009E33D5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC54F65C2BF2244500918D70 /* AppVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FC3E71372BF7675B009E33D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC3E71382BF7679F009E33D5 /* UserTableViewCell.swift */,
+				FC3E71392BF7679F009E33D5 /* UserTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FC54F6122BED00E500918D70 = {
@@ -153,7 +174,8 @@
 		FC54F65B2BF2242A00918D70 /* AppModule */ = {
 			isa = PBXGroup;
 			children = (
-				FC54F65C2BF2244500918D70 /* AppVC.swift */,
+				FC3E71372BF7675B009E33D5 /* Views */,
+				FC3E71362BF7674E009E33D5 /* Controllers */,
 			);
 			path = AppModule;
 			sourceTree = "<group>";
@@ -229,6 +251,7 @@
 				FC54F64F2BF1189900918D70 /* SlideCollectionViewCell.xib in Resources */,
 				FC54F6462BF103A500918D70 /* GoogleService-Info.plist in Resources */,
 				FC54F6282BED00E600918D70 /* Assets.xcassets in Resources */,
+				FC3E713B2BF7679F009E33D5 /* UserTableViewCell.xib in Resources */,
 				FC54F6262BED00E500918D70 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +265,7 @@
 			files = (
 				FC54F65D2BF2244500918D70 /* AppVC.swift in Sources */,
 				FC54F65A2BF2230B00918D70 /* SignUpVC.swift in Sources */,
+				FC3E713A2BF7679F009E33D5 /* UserTableViewCell.swift in Sources */,
 				FC54F64E2BF1189900918D70 /* SlideCollectionViewCell.swift in Sources */,
 				FC54F6232BED00E500918D70 /* LoginViewController.swift in Sources */,
 				FC54F6582BF222F900918D70 /* SignInVC.swift in Sources */,

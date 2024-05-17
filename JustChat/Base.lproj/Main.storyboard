@@ -254,7 +254,7 @@
             </objects>
             <point key="canvasLocation" x="3717" y="404"/>
         </scene>
-        <!--Item-->
+        <!--Users-->
         <scene sceneID="1Ik-Jc-8vp">
             <objects>
                 <viewController storyboardIdentifier="AppVC" id="JBw-nj-SSp" customClass="AppVC" customModule="JustChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -262,22 +262,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Авторизован" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxB-8u-9uH">
-                                <rect key="frame" x="175" y="178" width="103" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XzT-PK-YOu">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mUJ-Ul-5zL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mUJ-Ul-5zL" firstAttribute="bottom" secondItem="XzT-PK-YOu" secondAttribute="bottom" id="2MH-49-4o0"/>
+                            <constraint firstItem="XzT-PK-YOu" firstAttribute="leading" secondItem="mUJ-Ul-5zL" secondAttribute="leading" id="SIY-gv-5Ln"/>
+                            <constraint firstItem="XzT-PK-YOu" firstAttribute="top" secondItem="mUJ-Ul-5zL" secondAttribute="top" id="ZZx-PZ-gXj"/>
+                            <constraint firstItem="mUJ-Ul-5zL" firstAttribute="trailing" secondItem="XzT-PK-YOu" secondAttribute="trailing" id="iZI-MU-R2c"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="hQu-tA-6so"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="person.2" catalog="system" selectedImage="person.2.fill" id="hQu-tA-6so"/>
+                    <connections>
+                        <outlet property="usersTableView" destination="XzT-PK-YOu" id="n17-Pi-Fvh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WN2-Fj-oQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6469.4656488549617" y="24.647887323943664"/>
+            <point key="canvasLocation" x="6466" y="-165"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lfD-QT-jj9">
@@ -292,11 +298,28 @@
                     </tabBar>
                     <connections>
                         <segue destination="JBw-nj-SSp" kind="relationship" relationship="viewControllers" id="3QR-hR-1b0"/>
+                        <segue destination="hUh-Cc-VEO" kind="relationship" relationship="viewControllers" id="OHr-Hm-WeV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHP-vL-GDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5513.740458015267" y="24.647887323943664"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="KZ1-QS-V1j">
+            <objects>
+                <viewController id="hUh-Cc-VEO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QyO-9j-esB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LsZ-kD-DKo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chat" image="message" catalog="system" selectedImage="message.fill" id="HvT-vr-Xas"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEa-Pg-puS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6464" y="497"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Gl-1O-fbq">
@@ -318,6 +341,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="message" catalog="system" width="128" height="116"/>
+        <image name="message.fill" catalog="system" width="128" height="114"/>
+        <image name="person.2" catalog="system" width="128" height="87"/>
+        <image name="person.2.fill" catalog="system" width="128" height="86"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

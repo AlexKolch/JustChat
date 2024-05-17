@@ -50,7 +50,6 @@ class SignInVC: UIViewController {
                     print("User - \(user.uid) auth")
                     self?.userDefaults.set(true, forKey: "isAuth") //устанавливаем флаг авторизации пользователя
                     
-                    let appVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController")
                     self?.performSegue(withIdentifier: "goToAppVC", sender: self)
                 case .failure(let error):
                     print("authInApp was failure \(error.localizedDescription)!")

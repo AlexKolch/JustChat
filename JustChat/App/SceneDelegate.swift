@@ -31,8 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //Механизм проверки авторизации
         if isAuth {
-            startLogin()
-//            startApp()
+            startApp()
         } else {
             startLogin()
         }
