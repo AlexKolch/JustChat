@@ -298,28 +298,43 @@
                     </tabBar>
                     <connections>
                         <segue destination="JBw-nj-SSp" kind="relationship" relationship="viewControllers" id="3QR-hR-1b0"/>
-                        <segue destination="hUh-Cc-VEO" kind="relationship" relationship="viewControllers" id="OHr-Hm-WeV"/>
+                        <segue destination="pSa-Xj-n1Z" kind="relationship" relationship="viewControllers" id="OHr-Hm-WeV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHP-vL-GDv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5513.740458015267" y="24.647887323943664"/>
         </scene>
-        <!--Chat-->
+        <!--MessagesVC-->
         <scene sceneID="KZ1-QS-V1j">
             <objects>
-                <viewController id="hUh-Cc-VEO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatsViewController" id="hUh-Cc-VEO" customClass="MessagesVC" customModule="JustChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QyO-9j-esB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7dx-W4-YqM">
+                                <rect key="frame" x="0.0" y="44" width="393" height="751"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LsZ-kD-DKo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LsZ-kD-DKo" firstAttribute="bottom" secondItem="7dx-W4-YqM" secondAttribute="bottom" constant="8" id="H9J-DV-EHn"/>
+                            <constraint firstItem="7dx-W4-YqM" firstAttribute="leading" secondItem="LsZ-kD-DKo" secondAttribute="leading" id="P4F-jx-zpP"/>
+                            <constraint firstItem="LsZ-kD-DKo" firstAttribute="trailing" secondItem="7dx-W4-YqM" secondAttribute="trailing" id="iKg-SZ-RBx"/>
+                            <constraint firstItem="7dx-W4-YqM" firstAttribute="top" secondItem="LsZ-kD-DKo" secondAttribute="top" id="sBu-eK-Lpe"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chat" image="message" catalog="system" selectedImage="message.fill" id="HvT-vr-Xas"/>
+                    <navigationItem key="navigationItem" id="5zB-Rp-Vre"/>
+                    <connections>
+                        <outlet property="tableView" destination="7dx-W4-YqM" id="zHW-pR-kKX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEa-Pg-puS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6464" y="497"/>
+            <point key="canvasLocation" x="7390.0763358778622" y="496.47887323943667"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Gl-1O-fbq">
@@ -338,6 +353,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ewj-c5-g6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1912.2137404580151" y="3.5211267605633805"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="kkS-wp-B35">
+            <objects>
+                <navigationController title="Messages" automaticallyAdjustsScrollViewInsets="NO" id="pSa-Xj-n1Z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" image="message" catalog="system" selectedImage="message.fill" id="HvT-vr-Xas"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="blV-vt-DYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hUh-Cc-VEO" kind="relationship" relationship="rootViewController" id="cjq-U9-q0d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8GB-Os-oRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6463.3587786259541" y="496.47887323943667"/>
         </scene>
     </scenes>
     <resources>

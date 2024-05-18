@@ -80,3 +80,42 @@ extension AuthService {
         }
     }
 }
+//MARK: - Messanger
+extension AuthService {
+    ///отправить данные чата на сервер
+    func sendMessage(chatId: String?, otherUserId: String, message: Message, text: String, handler: @escaping (Bool) -> Void) {
+        if chatId == nil {
+            //создаем новый чат
+           
+        } else {
+            let message: [String: Any] = [
+                "date": message.sentDate,
+                "senderID": message.sender.senderId,
+                "text": text
+            ]
+            Firestore.firestore().collection("chats").document(chatId!).collection("messages").addDocument(data: message) { err in
+                if let err {
+                    handler(false)
+                } else {
+                    handler(true)
+                }
+            }
+        }
+    }
+    
+    func updateChat() {
+        
+    }
+    
+    func getChatID() {
+        
+    }
+    
+    func getAllMessages() {
+        
+    }
+    
+    func getOneMessage() {
+        
+    }
+}
