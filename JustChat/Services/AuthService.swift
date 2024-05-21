@@ -9,6 +9,11 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
+struct Constants {
+    static let collectionUsers = "users"
+    static let collectionChats = "chats"
+}
+
 class AuthService {
     static let shared = AuthService(); private init() {}
     
@@ -63,52 +68,133 @@ class AuthService {
 //MARK: - Request in Firebase
 extension AuthService {
     
-    func getAllUsers(handler: @escaping ([String]) -> Void) {
-        Firestore.firestore().collection("users").getDocuments { snap, error in
+    func getAllUsers(handler: @escaping ([CurrentUser]) -> Void) {
+        guard let email = Auth.auth().currentUser?.email else { return }
+        
+        var users = [CurrentUser]() //Складываем юзеров из Firebase сюда
+        
+        Firestore.firestore().collection("users")
+            .whereField("email", isNotEqualTo: email) //условие, доставать email-ы из базы, кроме текущего пользователя
+            .getDocuments { snap, error in
             if let err = error {
                 print("Не получилось получить данные: \(err.localizedDescription)")
             }
             guard let docs = snap?.documents else { return }
-            var emailList = [String]()
+//            var emailList = [String]() //складывали email-ы сюда
+                
             //Получаем данные из массива документов файрбейса
             for doc in docs {
                 let data = doc.data()
-                let userEmail = data["email"] as! String //достаем по ключу
-                emailList.append(userEmail)
+                let userId = doc.documentID //ID документа т.е. ID юзера
+                let userEmail = data["email"] as! String //достаем по ключу email
+                
+//                emailList.append(userEmail)
+                users.append(CurrentUser(id: userId, email: userEmail))
             }
-            handler(emailList)
+            handler(users)
         }
     }
 }
 //MARK: - Messanger
 extension AuthService {
     ///отправить данные чата на сервер
-    func sendMessage(chatId: String?, otherUserId: String, message: Message, text: String, handler: @escaping (Bool) -> Void) {
+    func sendMessage(chatId: String?, otherUserId: String, text: String, handler: @escaping (String) -> Void) {
+        guard
+            let uid = Auth.auth().currentUser?.uid else { //достаем ID currentUser
+            print("Не сущ uid")
+            return }
+        
         if chatId == nil {
             //создаем новый чат
-           
-        } else {
-            let message: [String: Any] = [
-                "date": message.sentDate,
-                "senderID": message.sender.senderId,
-                "text": text
+            let chatId = UUID().uuidString //создаем id для чата
+            
+            //устанавливаем данные для полей документа Чат (chatId)
+            let selfChatData: [String: Any] = [
+                "date": Date(),
+                "otherId": otherUserId
             ]
+            
+            let otherUserChatData: [String: Any] = [
+                "date": Date(),
+                "otherId": uid
+            ]
+            
+            //Сохраняем чат к себе (в свой userID)
+            Firestore.firestore().collection("users")
+                .document(uid)
+                .collection("chats")
+                .document(chatId)
+                .setData(selfChatData) //устанавливаем документу поля с данными
+            
+            //Сохраняем чат юзеру с которым переписываемся (в его userID)
+            Firestore.firestore().collection("users")
+                .document(otherUserId) //идем к документу собеседника
+                .collection("chats")
+                .document(chatId) //Создаем тот же самый чат по одному chatId
+                .setData(otherUserChatData)
+            
+            //Создаем чат в коллекции "chats" firebase
+            let message: [String: Any] = ["date": Date(), "senderID": uid, "text": text]
+            let chatInfo: [String: Any] = ["date": Date(), "selfSender": uid, "otherSender": otherUserId]
+            
+            Firestore.firestore().collection("chats")
+                .document(chatId) //создаем документ чата ОБЯЗАТЕЛЬНО с тем же chatId
+                .setData(chatInfo) { err in
+                    if let err {
+                        print("Данные чата не создались по причине: - \(err.localizedDescription)")
+                        return
+                    }
+                   //Если получилось создать чат, Создаем в чате коллекцию сообщений
+                    Firestore.firestore().collection("chats")
+                        .document(chatId) //идем в наш чат
+                        .collection("messages") //создаем коллекцию сообщений
+                        .addDocument(data: message) { err in
+                            if let err {
+                                print("Не получилось создать документ сообщения - \(err.localizedDescription)")
+                            } else {
+                                //добавялем новое сообщение в коллекцию сообщений
+                                handler(chatId)
+                            }
+                        }
+                }
+        } else {
+            //Чат сущ, добавляем в него документ с новым сообщением
+            let message: [String: Any] = ["date": Date(), "senderID": uid, "text": text]
+            
             Firestore.firestore().collection("chats").document(chatId!).collection("messages").addDocument(data: message) { err in
                 if let err {
-                    handler(false)
+                    print("Не получилось создать документ сообщения - \(err.localizedDescription)")
                 } else {
-                    handler(true)
+                    handler(chatId!)
                 }
             }
         }
     }
     
+    
     func updateChat() {
         
     }
     
-    func getChatID() {
-        
+    ///получение id чата
+    func getChatID(otherId: String, completion: @escaping (String) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Firestore.firestore().collection(Constants.collectionUsers)
+            .document(uid)
+            .collection(Constants.collectionChats)
+            .whereField("otherId", isEqualTo: otherId)
+            .getDocuments { snap, err in
+                if let err {
+                    print("Ошибка поиска ID чата getChatID - \(err.localizedDescription)")
+                    return
+                }
+                if let snap, !snap.documents.isEmpty {
+                    let doc = snap.documents.first
+                    if let chatId = doc?.documentID {
+                        completion(chatId) //возвращаем id чата
+                    }
+                }
+            }
     }
     
     func getAllMessages() {

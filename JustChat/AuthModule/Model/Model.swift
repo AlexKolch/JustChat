@@ -12,9 +12,9 @@ struct Slide {
     let text: String
 }
 
-//struct LoginField {
-//    let email: String
-//    let password: String
-//}
+struct CurrentUser {
+    let id: String
+    let email: String
+}
 
 

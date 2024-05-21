@@ -34,9 +34,10 @@ class ChatVC: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /* //Mock data
         messagesList.append(Message(sender: selfSender, messageId: "1", sentDate: Date().addingTimeInterval(-11200), kind: .text("Привет!")))
         messagesList.append(Message(sender: otherSender, messageId: "2", sentDate: Date().addingTimeInterval(-10200), kind: .text("Привет! Как дела?")))
-        messagesList.append(Message(sender: selfSender, messageId: "3", sentDate: Date().addingTimeInterval(-9000), kind: .text("Все ок!")))
+     */
         messagesCollectionView.reloadData()
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -44,6 +45,12 @@ class ChatVC: MessagesViewController {
         messageInputBar.delegate = self
         
         showMessageTimestampOnSwipeLeft = true
+        //проверка на существование чата, чтобы не создавались каждый раз новые чаты
+        if chatId == nil {
+            service.getChatID(otherId: otherId) { [weak self] chatId in
+                self?.chatId = chatId
+            }
+        }
     }
     
 
@@ -75,16 +82,13 @@ extension ChatVC: InputBarAccessoryViewDelegate {
         let message = Message(sender: selfSender, messageId: UUID().uuidString, sentDate: Date(), kind: .text(text))
         messagesList.append(message)
         
-        service.sendMessage(chatId: chatId, otherUserId: otherId, message: message, text: text) { [weak self] result in
-            if result {
+        service.sendMessage(chatId: chatId, otherUserId: otherId, text: text) { [weak self] chatId in
                 DispatchQueue.main.async {
                     inputBar.inputTextView.text = nil
                     self?.messagesCollectionView.reloadDataAndKeepOffset() //перезагрузить коллекцию и проскролить к новым item
                 }
-            } else {
-                
-            }
+         
+            self?.chatId = chatId
         }
-       
     }
 }

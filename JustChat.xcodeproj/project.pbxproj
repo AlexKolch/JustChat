@@ -30,7 +30,7 @@
 		FC54F6512BF127DC00918D70 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6502BF127DC00918D70 /* Model.swift */; };
 		FC54F6582BF222F900918D70 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6572BF222F900918D70 /* SignInVC.swift */; };
 		FC54F65A2BF2230B00918D70 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F6592BF2230B00918D70 /* SignUpVC.swift */; };
-		FC54F65D2BF2244500918D70 /* AppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F65C2BF2244500918D70 /* AppVC.swift */; };
+		FC54F65D2BF2244500918D70 /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC54F65C2BF2244500918D70 /* UsersVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +54,7 @@
 		FC54F6502BF127DC00918D70 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FC54F6572BF222F900918D70 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		FC54F6592BF2230B00918D70 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
-		FC54F65C2BF2244500918D70 /* AppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVC.swift; sourceTree = "<group>"; };
+		FC54F65C2BF2244500918D70 /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		FC3E71362BF7674E009E33D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FC54F65C2BF2244500918D70 /* AppVC.swift */,
+				FC54F65C2BF2244500918D70 /* UsersVC.swift */,
 				FC3E713F2BF7EE5D009E33D5 /* MessagesVC.swift */,
 				FC3E71412BF86E3E009E33D5 /* ChatVC.swift */,
 			);
@@ -273,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC54F65D2BF2244500918D70 /* AppVC.swift in Sources */,
+				FC54F65D2BF2244500918D70 /* UsersVC.swift in Sources */,
 				FC54F65A2BF2230B00918D70 /* SignUpVC.swift in Sources */,
 				FC3E713A2BF7679F009E33D5 /* UserTableViewCell.swift in Sources */,
 				FC54F64E2BF1189900918D70 /* SlideCollectionViewCell.swift in Sources */,

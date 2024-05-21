@@ -7,12 +7,12 @@
 
 import UIKit
 
-class AppVC: UIViewController {
+class UsersVC: UIViewController {
     
     @IBOutlet weak var usersTableView: UITableView!
     
     let service = AuthService.shared
-    var users = [String]() //Имена пользователей
+    var users = [CurrentUser]() //Юзеры из Firebase
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,18 +34,9 @@ class AppVC: UIViewController {
             self.usersTableView.reloadData()
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
-extension AppVC: UITableViewDataSource {
+extension UsersVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         users.count
@@ -54,14 +45,23 @@ extension AppVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.reuseId, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
         let dataCell = users[indexPath.row]
-        cell.configCell(dataCell)
+        cell.configCell(dataCell.email)
         return cell
     }
     
 }
 
-extension AppVC: UITableViewDelegate {
+extension UsersVC: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let userId = users[indexPath.row].id
+        let vc = ChatVC()
+        vc.otherId = userId
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
