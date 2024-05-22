@@ -12,6 +12,13 @@ import FirebaseFirestore
 struct Constants {
     static let collectionUsers = "users"
     static let collectionChats = "chats"
+    static let collectionMessages = "messages"
+    
+    enum MessageField: String {
+        case date
+        case senderID
+        case text
+    }
 }
 
 class AuthService {
@@ -183,7 +190,7 @@ extension AuthService {
             .document(uid)
             .collection(Constants.collectionChats)
             .whereField("otherId", isEqualTo: otherId)
-            .getDocuments { snap, err in
+            .getDocuments { snap, err in //получаем снимок данных документа и/или ошибку
                 if let err {
                     print("Ошибка поиска ID чата getChatID - \(err.localizedDescription)")
                     return
@@ -197,8 +204,43 @@ extension AuthService {
             }
     }
     
-    func getAllMessages() {
-        
+    func getAllMessages(chatId: String, completion: @escaping ([Message]) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+
+        Firestore.firestore().collection(Constants.collectionChats)
+            .document(chatId)
+            .collection(Constants.collectionMessages)
+            .limit(to: 20) //лимит на получения сообщений из коллекции
+            .order(by: "date", descending: false) //сортировка по дате добавления
+            .addSnapshotListener { snap, error in
+                guard error == nil else { return }
+                if let snap, !snap.documents.isEmpty {
+                    
+                    var messages = [Message]()
+                    var sender = Sender(senderId: uid, displayName: "")
+                  
+                    for doc in snap.documents {
+                        let docData = doc.data() //данные из документа
+                        let senderId = docData[Constants.MessageField.senderID.rawValue] as! String
+                        let messageId = doc.documentID
+                        
+                        let date = doc[Constants.MessageField.date.rawValue] as! Timestamp
+                        let sentDate = date.dateValue() //преобразуем временную метку Timestamp в Date
+                        
+                        let text = docData[Constants.MessageField.text.rawValue] as! String
+                        //костыль с установкой senderId для правильного отображения отправитель-получатель
+                        if senderId == uid {
+                            sender = Sender(senderId: "1", displayName: "")
+                        } else {
+                            sender = Sender(senderId: "2", displayName: "")
+                        }
+                        
+                        let message = Message(sender: sender, messageId: messageId, sentDate: sentDate, kind: .text(text))
+                        messages.append(message)
+                    }
+                    completion(messages) //передаем все полученные сообщения из коллекции messages
+                }
+            }
     }
     
     func getOneMessage() {

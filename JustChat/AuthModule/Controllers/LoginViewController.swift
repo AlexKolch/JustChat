@@ -16,9 +16,9 @@ class LoginViewController: UIViewController {
     
     private lazy var sliderCollectionV: UICollectionView = setCollectionView()
     
-    private var slides = [Slide(image: "img1", text: "efdsvsdvsdvsdv"),
-                          Slide(image: "img2", text: "ddvv"),
-                          Slide(image: "img3", text: "efdsvsdvsdvsdv")]
+    private var slides = [Slide(image: "img1", text: "Общайся с друзьями"),
+                          Slide(image: "img2", text: "Где бы ты ни был"),
+                          Slide(image: "img3", text: "Это просто - JustChat")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

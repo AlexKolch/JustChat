@@ -27,8 +27,8 @@ class ChatVC: MessagesViewController {
     var chatId: String?
     var otherId: String!
     
-    private let selfSender = Sender(senderId: "1", displayName: "Me")
-    private var otherSender = Sender(senderId: "2", displayName: "Sam")
+    private let selfSender = Sender(senderId: "1", displayName: "")
+    private var otherSender = Sender(senderId: "2", displayName: "")
     
     private var messagesList = [MessageType]()
     
@@ -49,11 +49,17 @@ class ChatVC: MessagesViewController {
         if chatId == nil {
             service.getChatID(otherId: otherId) { [weak self] chatId in
                 self?.chatId = chatId
+                self?.getMessages(chatId: chatId)
             }
         }
     }
-    
-
+    ///получение сообщений чата
+    private func getMessages(chatId: String) {
+        service.getAllMessages(chatId: chatId) { [weak self] messages in
+            self?.messagesList = messages
+            self?.messagesCollectionView.reloadDataAndKeepOffset()
+        }
+    }
 }
 
 extension ChatVC: MessagesDataSource {
